@@ -74,6 +74,7 @@ import com.sk89q.worldguard.protection.managers.storage.file.DirectoryYamlDriver
 import com.sk89q.worldguard.protection.managers.storage.sql.SQLDriver;
 import com.sk89q.worldguard.protection.regions.ProtectedRegion;
 import com.sk89q.worldguard.util.logging.RecordMessagePrefixer;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bstats.bukkit.Metrics;
 import org.bstats.charts.DrilldownPie;
 import org.bstats.charts.SimplePie;
@@ -109,6 +110,8 @@ public class WorldGuardPlugin extends JavaPlugin {
     private PlayerMoveListener playerMoveListener;
 
     private static final int BSTATS_PLUGIN_ID = 3283;
+
+    public final MiniMessage miniMessage = MiniMessage.miniMessage();
 
     /**
      * Construct objects. Actual loading occurs when the plugin is enabled, so

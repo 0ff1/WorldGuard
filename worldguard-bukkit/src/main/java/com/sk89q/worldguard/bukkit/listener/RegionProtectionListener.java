@@ -124,7 +124,7 @@ public class RegionProtectionListener extends AbstractListener {
         if (message == null || message.isEmpty()) return;
         message = WorldGuard.getInstance().getPlatform().getMatcher().replaceMacros(localPlayer, message);
         message = CommandUtils.replaceColorMacros(message);
-        localPlayer.printRaw(message.replace("%what%", what));
+        ((Player) localPlayer).sendMessage(getPlugin().miniMessage.deserialize(message.replace("%what%", what)));
     }
 
     /**
